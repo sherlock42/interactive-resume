@@ -75,14 +75,17 @@
       var isIE = document.documentMode;
 
       var containerAnimationMap = {
-        perspective: [ 215, 50 ],
-        opacity: [ 0.99, 0.7 ]
+        perspective: [ 50, 10 ],
+        opacity: [ 0.99, 0.55 ]
       };
 
       /* IE10+ produce odd glitching issues when you rotateZ on a parent element subjected to 3D transforms. */
       if (!isIE) {
         containerAnimationMap.rotateZ = [ 5, 0 ];
       }
+      $container
+      .css("perspective-origin", screenWidth/2 + "px " + ((screenHeight * 0.45) - chromeHeight) + "px")
+      .velocity(containerAnimationMap, { duration: 8000, loop: true, delay: 500 });
 
       $dots
         .velocity({ 

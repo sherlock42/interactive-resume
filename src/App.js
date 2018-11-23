@@ -148,11 +148,10 @@ class App extends Component{
 
         <div className="stars">
             {this.renderStars("star1")}
-        </div>
-
-        <div className="stars-static">
             {this.renderStars("staticstar", 300)}
         </div>
+
+        
         
         <img className="alien" id = "alien2" src={alien2}></img>
         <img className="alien" id = "alien3" src={alien3}></img>
