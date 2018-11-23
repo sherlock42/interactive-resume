@@ -38,8 +38,8 @@ class App extends Component{
       });  
     }
     
-    calculateRandomCoord($(".star"), 15);
-    calculateRandomCoord($(".star1"), 7);
+    calculateRandomCoord($(".star1"), 25);
+    //calculateRandomCoord($(".star1"), 7);
 
     $("#name-retro").animate({right: "+=5000px", bottom: "+=5000px"}, 3000, "swing", function() {
       var bottomOff = $("#name-retro").height();
@@ -121,6 +121,23 @@ class App extends Component{
     }
     animateAlien();
   }
+  renderStars() {
+    var isWebkit = /Webkit/i.test(navigator.userAgent),
+      isChrome = /Chrome/i.test(navigator.userAgent),
+      isMobile = !!("ontouchstart" in window),
+      isAndroid = /Android/i.test(navigator.userAgent),
+      isIE = document.documentMode;
+
+      var dotsCount = 60,
+      dotsHtml = [];
+      dotsCount = isMobile ? (isAndroid ? 220 : 300) : (isChrome ? 600 : 500);
+
+      for (var i = 0; i < dotsCount; i++) {
+        dotsHtml.push(<img className='star1' src={starwhite}></img>);
+      }
+      return dotsHtml;
+  }
+
   render() {
     return (
       <div className="App">
@@ -129,131 +146,10 @@ class App extends Component{
         <img id="comet2" src={cometyellow}></img>  
         <img id="comet3" src={cometorange}></img>   
 
-        <img className="star" src={starwhite}></img> 
-        <img className="star" src={starwhite}></img> 
-        <img className="star" src={starwhite}></img> 
-        <img className="star" src={starwhite}></img> 
-        <img className="star" src={starwhite}></img> 
-        <img className="star" src={starwhite}></img> 
-        <img className="star" src={starwhite}></img> 
-        <img className="star" src={starwhite}></img> 
-        <img className="star" src={starwhite}></img> 
-        <img className="star" src={starwhite}></img> 
-        <img className="star" src={starwhite}></img> 
-        <img className="star" src={starwhite}></img> 
-        <img className="star" src={starwhite}></img> 
-        <img className="star" src={starwhite}></img> 
-        <img className="star" src={starwhite}></img> 
-        <img className="star" src={starwhite}></img> 
+        <div className="stars">
+            {this.renderStars()}
 
-        <img className="star1" src={starwhite}></img> 
-        <img className="star1" src={starwhite}></img> 
-        <img className="star1" src={starwhite}></img> 
-        <img className="star1" src={starwhite}></img> 
-        <img className="star1" src={starwhite}></img> 
-        <img className="star1" src={starwhite}></img> 
-        <img className="star1" src={starwhite}></img> 
-        <img className="star1" src={starwhite}></img> 
-        <img className="star1" src={starwhite}></img> 
-        <img className="star1" src={starwhite}></img> 
-        <img className="star1" src={starwhite}></img> 
-        <img className="star1" src={starwhite}></img> 
-        <img className="star1" src={starwhite}></img> 
-        <img className="star1" src={starwhite}></img> 
-        <img className="star1" src={starwhite}></img> 
-        <img className="star1" src={starwhite}></img> 
-        <img className="star1" src={starwhite}></img> 
-        <img className="star1" src={starwhite}></img> 
-        <img className="star1" src={starwhite}></img> 
-        <img className="star1" src={starwhite}></img> 
-        <img className="star1" src={starwhite}></img> 
-        <img className="star1" src={starwhite}></img> 
-        <img className="star1" src={starwhite}></img> 
-        <img className="star1" src={starwhite}></img> 
-        <img className="star1" src={starwhite}></img> 
-        <img className="star1" src={starwhite}></img> 
-        <img className="star1" src={starwhite}></img> 
-        <img className="star1" src={starwhite}></img> 
-        <img className="star1" src={starwhite}></img> 
-        <img className="star1" src={starwhite}></img> 
-        <img className="star1" src={starwhite}></img> 
-        <img className="star1" src={starwhite}></img> 
-        <img className="star1" src={starwhite}></img> 
-        <img className="star1" src={starwhite}></img> 
-        <img className="star1" src={starwhite}></img> 
-        <img className="star1" src={starwhite}></img> 
-        <img className="star1" src={starwhite}></img> 
-        <img className="star1" src={starwhite}></img> 
-        <img className="star1" src={starwhite}></img> 
-        <img className="star1" src={starwhite}></img> 
-        <img className="star1" src={starwhite}></img> 
-        <img className="star1" src={starwhite}></img> 
-        <img className="star1" src={starwhite}></img> 
-        <img className="star1" src={starwhite}></img> 
-        <img className="star1" src={starwhite}></img> 
-        <img className="star1" src={starwhite}></img> 
-        <img className="star1" src={starwhite}></img> 
-        <img className="star1" src={starwhite}></img> 
-        <img className="star1" src={starwhite}></img> 
-        <img className="star1" src={starwhite}></img> 
-        <img className="star1" src={starwhite}></img> 
-        <img className="star1" src={starwhite}></img> 
-        <img className="star1" src={starwhite}></img> 
-        <img className="star1" src={starwhite}></img> 
-        <img className="star1" src={starwhite}></img> 
-        <img className="star1" src={starwhite}></img> 
-        <img className="star1" src={starwhite}></img> 
-        <img className="star1" src={starwhite}></img> 
-        <img className="star1" src={starwhite}></img> 
-        <img className="star1" src={starwhite}></img> 
-        <img className="star1" src={starwhite}></img> 
-        <img className="star1" src={starwhite}></img> 
-        <img className="star1" src={starwhite}></img> 
-        <img className="star1" src={starwhite}></img> 
-        <img className="star1" src={starwhite}></img> 
-        <img className="star1" src={starwhite}></img> 
-        <img className="star1" src={starwhite}></img> 
-        <img className="star1" src={starwhite}></img> 
-        <img className="star1" src={starwhite}></img> 
-        <img className="star1" src={starwhite}></img> 
-        <img className="star1" src={starwhite}></img> 
-        <img className="star1" src={starwhite}></img> 
-        <img className="star1" src={starwhite}></img> 
-        <img className="star1" src={starwhite}></img> 
-        <img className="star1" src={starwhite}></img> 
-        <img className="star1" src={starwhite}></img> 
-        <img className="star1" src={starwhite}></img> 
-        <img className="star1" src={starwhite}></img> 
-        <img className="star1" src={starwhite}></img> 
-        <img className="star1" src={starwhite}></img> 
-        <img className="star1" src={starwhite}></img> 
-        <img className="star1" src={starwhite}></img> 
-        <img className="star1" src={starwhite}></img> 
-        <img className="star1" src={starwhite}></img> 
-        <img className="star1" src={starwhite}></img> 
-        <img className="star1" src={starwhite}></img> 
-        <img className="star1" src={starwhite}></img> 
-        <img className="star1" src={starwhite}></img> 
-        <img className="star1" src={starwhite}></img> 
-        <img className="star1" src={starwhite}></img> 
-        <img className="star1" src={starwhite}></img> 
-        <img className="star1" src={starwhite}></img> 
-        <img className="star1" src={starwhite}></img> 
-        <img className="star1" src={starwhite}></img> 
-        <img className="star1" src={starwhite}></img> 
-        <img className="star1" src={starwhite}></img> 
-        <img className="star1" src={starwhite}></img> 
-        <img className="star1" src={starwhite}></img> 
-        <img className="star1" src={starwhite}></img> 
-        <img className="star1" src={starwhite}></img> 
-        <img className="star1" src={starwhite}></img> 
-        <img className="star1" src={starwhite}></img> 
-        <img className="star1" src={starwhite}></img> 
-        <img className="star1" src={starwhite}></img> 
-        <img className="star1" src={starwhite}></img> 
-        <img className="star1" src={starwhite}></img> 
-        <img className="star1" src={starwhite}></img> 
-
+        </div>
         <img className="alien" id = "alien2" src={alien2}></img>
         <img className="alien" id = "alien3" src={alien3}></img>
         <img className="alien" id = "alien1" src={alien1}></img>

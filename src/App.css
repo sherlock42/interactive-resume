@@ -72,16 +72,25 @@
   display: none;
 }
 
-.star {
-  position: fixed;
-  height: 20px;
-  z-index: -1;
+.stars {
+  width: 100%;
+  height: 100%;
+perspective: 50px;
+  -webkit-perspective: 50px;
+  -moz-perspective: 50px;
+  -ms-perspective: 50px;
+
+  transform-origin: 50% 100%;
+  -webkit-transform-origin: 50% 100%;
+  -moz-transform-origin: 50% 100%;
+  -ms-transform-origin: 50% 100%;
+  z-index: -3
 }
 
 .star1 {
   position: fixed;
-  height: 10px;
-  z-index: -1;
+  height: 30px;
+  z-index: -2;
 }
 
 @keyframes cometmotion1 {

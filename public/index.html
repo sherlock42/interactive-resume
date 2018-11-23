@@ -46,5 +46,61 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+    <script src="velocity.min.js" id="library"></script>
+    <script>
+      function r (min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+      }
+
+      setTimeout(function() {
+        $dots = $(".star1");
+        $container = $(".stars");
+      var screenWidth = window.screen.availWidth,
+        screenHeight = window.screen.availHeight,
+        chromeHeight = screenHeight - (document.documentElement.clientHeight || screenHeight);
+
+      var translateZMin = -200,
+      translateZMax = 200;
+
+      var translateXMin = -1 * screenWidth,
+        translateXMax = 2*screenWidth;
+
+      var translateYMin = -1*screenHeight,
+        translateYMax = 2*screenHeight;
+
+      var containerAnimationMap = {
+          perspective: [ 215, 50 ],
+          opacity: [ 0.99, 0.7 ]
+        };
+      var isIE = document.documentMode;
+
+      var containerAnimationMap = {
+        perspective: [ 215, 50 ],
+        opacity: [ 0.99, 0.7 ]
+      };
+
+      /* IE10+ produce odd glitching issues when you rotateZ on a parent element subjected to 3D transforms. */
+      if (!isIE) {
+        containerAnimationMap.rotateZ = [ 5, 0 ];
+      }
+
+      $dots
+        .velocity({ 
+          translateX: [ 
+            function() { return "+=" + r(translateXMin, translateXMax) },
+            function() { return r(translateXMin, translateXMax) }
+          ],
+          translateY: [
+            function() { return "+=" + r(translateYMin, translateYMax) },
+            function() { return r(translateYMin, translateYMax) }
+          ],
+          translateZ: [
+            function() { return "+=" + r(translateZMin, translateZMax) },
+            function() { return r(translateZMin, translateZMax) }
+          ]
+        }, { duration: 30000, loop: true });
+      }) 
+      
+    </script>
   </body>
 </html>
