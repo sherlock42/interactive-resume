@@ -1,0 +1,109 @@
+.App {
+  text-align: center;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+#comet1 {
+  position: fixed;
+  height: 200px;
+  top: -200px;
+  right: 200px;
+  z-index: -1;
+}
+
+#comet2 {
+  position: fixed;
+  height: 200px;
+  bottom: -200px;
+  left: 50px;
+  z-index: -2;
+}
+
+#comet3 {
+  position: fixed;
+  height: 150px;
+  bottom: -200px;
+  left: 500px;
+  z-index: -2;
+}
+
+#portraitface {
+  position: fixed;
+  margin: 0 auto;
+  margin-top: 70px;
+  -webkit-animation: rotation 2s infinite linear;
+  animation: rotation .25s infinite linear alternate;
+}
+
+.Name-Main {
+  
+}
+
+#underdev {
+  display: block;
+  margin: 0 auto;
+  margin-top: 20px;
+  height: 50px;
+}
+
+#name-retro {
+  max-width: -webkit-fill-available;
+  position: fixed;
+  right: -5000px;
+  bottom: -5000px;
+  max-height: 50%;
+}
+
+.alien {
+  position: fixed;
+  max-height: 150px;
+  max-width: -webkit-fill-available;
+  display: none; 
+}
+
+.chat {
+  position: fixed;
+  height: 200px;
+  display: none;
+}
+
+.star {
+  position: fixed;
+  height: 20px;
+  z-index: -1;
+}
+
+.star1 {
+  position: fixed;
+  height: 10px;
+  z-index: -1;
+}
+
+@keyframes cometmotion1 {
+  0% {
+    top: ;
+  }
+}
+
+@-webkit-keyframes rotation {
+  from {
+      -webkit-transform: rotate(-6deg);
+  }
+  to {
+      -webkit-transform: rotate(6deg);
+  }
+}
+
+@keyframes rotation {
+  from {
+      transform: rotate(-6deg);
+  }
+  to {
+      transform: rotate(6deg);
+  }
+}
