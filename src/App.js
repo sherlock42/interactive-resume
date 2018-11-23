@@ -24,22 +24,22 @@ class App extends Component{
     var bodyWidth = document.body.clientWidth;
     var bodyHeight = document.body.clientHeight;
 
-    var calculateRandomCoord = function (star, maxHeight) {
-      
+    var calculateRandomCoord = function (star, maxHeight, isStatic) {
       star.each(function() {
         var ele = $(this);
-        var randPosX = Math.floor((Math.random()*bodyWidth));
-        var randPosY = Math.floor((Math.random()*bodyHeight));
         var height = Math.floor((Math.random()*maxHeight));
-        ele.css('left', randPosX);
-        ele.css('top', randPosY); 
         ele.height(height);
-
+        if(isStatic){
+            var randPosX = Math.floor((Math.random()*bodyWidth));
+            var randPosY = Math.floor((Math.random()*bodyHeight));
+            ele.css('left', randPosX);
+            ele.css('top', randPosY);
+        }
       });  
     }
     
     calculateRandomCoord($(".star1"), 25);
-    //calculateRandomCoord($(".star1"), 7);
+    calculateRandomCoord($(".staticstar"), 5, true);
 
     $("#name-retro").animate({right: "+=5000px", bottom: "+=5000px"}, 3000, "swing", function() {
       var bottomOff = $("#name-retro").height();
@@ -121,7 +121,7 @@ class App extends Component{
     }
     animateAlien();
   }
-  renderStars() {
+  renderStars(classNm, numDots) {
     var isWebkit = /Webkit/i.test(navigator.userAgent),
       isChrome = /Chrome/i.test(navigator.userAgent),
       isMobile = !!("ontouchstart" in window),
@@ -130,10 +130,10 @@ class App extends Component{
 
       var dotsCount = 60,
       dotsHtml = [];
-      dotsCount = isMobile ? (isAndroid ? 220 : 300) : (isChrome ? 600 : 500);
-
+      dotsCount = numDots ? numDots : isMobile ? (isAndroid ? 120 : 150) : (isChrome ? 400 : 300);
+       
       for (var i = 0; i < dotsCount; i++) {
-        dotsHtml.push(<img className='star1' src={starwhite}></img>);
+        dotsHtml.push(<img className={classNm} src={starwhite}></img>);
       }
       return dotsHtml;
   }
@@ -147,9 +147,13 @@ class App extends Component{
         <img id="comet3" src={cometorange}></img>   
 
         <div className="stars">
-            {this.renderStars()}
-
+            {this.renderStars("star1")}
         </div>
+
+        <div className="stars-static">
+            {this.renderStars("staticstar", 300)}
+        </div>
+        
         <img className="alien" id = "alien2" src={alien2}></img>
         <img className="alien" id = "alien3" src={alien3}></img>
         <img className="alien" id = "alien1" src={alien1}></img>

@@ -49,6 +49,7 @@
   margin: 0 auto;
   margin-top: 20px;
   height: 50px;
+  z-index: 100;
 }
 
 #name-retro {
@@ -75,7 +76,7 @@
 .stars {
   width: 100%;
   height: 100%;
-perspective: 50px;
+  perspective: 50px;
   -webkit-perspective: 50px;
   -moz-perspective: 50px;
   -ms-perspective: 50px;
@@ -88,6 +89,12 @@ perspective: 50px;
 }
 
 .star1 {
+  position: fixed;
+  height: 30px;
+  z-index: -2;
+}
+
+.staticstar {
   position: fixed;
   height: 30px;
   z-index: -2;

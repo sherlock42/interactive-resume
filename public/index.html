@@ -63,10 +63,10 @@
       translateZMax = 200;
 
       var translateXMin = -1 * screenWidth,
-        translateXMax = 2*screenWidth;
+        translateXMax = 1.3*screenWidth;
 
       var translateYMin = -1*screenHeight,
-        translateYMax = 2*screenHeight;
+        translateYMax = 1.3*screenHeight;
 
       var containerAnimationMap = {
           perspective: [ 215, 50 ],
@@ -98,7 +98,7 @@
             function() { return "+=" + r(translateZMin, translateZMax) },
             function() { return r(translateZMin, translateZMax) }
           ]
-        }, { duration: 30000, loop: true });
+        }, { duration: 40000, loop: true });
       }) 
       
     </script>
